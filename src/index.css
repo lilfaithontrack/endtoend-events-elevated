@@ -8,46 +8,47 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 4%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 4%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 4%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 4%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 345 100% 25%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 345 85% 35%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 345 100% 25%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 345 85% 40%;
 
     --radius: 0.5rem;
     
-    --luxury-dark: 0 0% 4%;
-    --luxury-burgundy: 345 100% 25%;
-    --luxury-burgundy-light: 345 100% 35%;
-    --luxury-gold: 43 100% 50%;
+    --luxury-dark: 0 0% 0%;
+    --luxury-burgundy: 345 85% 35%;
+    --luxury-burgundy-light: 345 85% 45%;
+    --luxury-burgundy-dark: 345 85% 25%;
     
     --gradient-luxury: linear-gradient(135deg, hsl(var(--luxury-dark)), hsl(var(--luxury-burgundy)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-stage: linear-gradient(180deg, hsl(var(--luxury-dark)) 0%, hsl(var(--luxury-burgundy-dark)) 100%);
     
-    --shadow-elegant: 0 10px 40px -10px hsl(var(--luxury-burgundy) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--luxury-burgundy) / 0.2);
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--luxury-burgundy) / 0.5);
+    --shadow-glow: 0 0 60px hsl(var(--luxury-burgundy) / 0.4);
+    --shadow-intense: 0 0 80px hsl(var(--luxury-burgundy) / 0.6);
     
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -71,31 +72,6 @@ All colors MUST be HSL.
   .dark {
     --background: 0 0% 4%;
     --foreground: 0 0% 98%;
-
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 4%;
-
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 345 100% 25%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 345 100% 35%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

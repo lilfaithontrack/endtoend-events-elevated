@@ -3,35 +3,41 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "CEO, TechVision Corp",
-    content: "End To End Events transformed our annual gala into an unforgettable experience. Their attention to detail and professionalism exceeded all expectations.",
+    name: 'Marcus "DJ Pulse" Rivera',
+    role: "Electronic Artist",
+    content: "End To End transformed my album launch into an unforgettable experience. The production quality was absolutely world-class.",
     rating: 5,
   },
   {
-    name: "David & Emily Chen",
-    role: "Wedding Clients",
-    content: "Our wedding was absolutely perfect. From the first consultation to the last dance, the team handled everything with grace and expertise.",
+    name: "Sarah Chen",
+    role: "Festival Director, SoundWave",
+    content: "They handled our 50,000-capacity festival flawlessly. From stage design to artist logistics, everything was perfection.",
     rating: 5,
   },
   {
-    name: "Marcus Rodriguez",
-    role: "Event Producer",
-    content: "I've worked with many event companies, but none compare to the level of sophistication and execution that End To End Events delivers consistently.",
+    name: "The Midnight Echoes",
+    role: "Rock Band",
+    content: "Our 20-city tour wouldn't have been possible without End To End. They made every show feel like a stadium production.",
     rating: 5,
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-20 lg:py-32 bg-luxury-dark text-primary-foreground">
-      <div className="container mx-auto px-4">
+    <section className="py-20 lg:py-32 bg-black relative">
+      {/* Background Effects */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Client <span className="text-gradient-luxury">Testimonials</span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white">
+            ARTIST <span style={{ color: '#A62639' }}>TESTIMONIALS</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            What our clients say about working with us
+          <p className="text-xl text-white/70 max-w-2xl mx-auto uppercase tracking-wider">
+            What Artists Say About Us
           </p>
         </div>
 
@@ -39,20 +45,23 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={testimonial.name}
-              className="bg-secondary/50 backdrop-blur-sm border-border/50 p-8 hover-glow animate-slide-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="bg-black/70 backdrop-blur-sm border-white/10 p-8 hover:border-accent/50 transition-all duration-500 animate-slide-up"
+              style={{ 
+                animationDelay: `${index * 100}ms`,
+                boxShadow: '0 0 40px rgba(166, 38, 57, 0.2)'
+              }}
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="text-lg mb-6 text-foreground/90 italic">
+              <p className="text-lg mb-6 text-white/90 italic">
                 "{testimonial.content}"
               </p>
               <div>
-                <div className="font-semibold text-primary-foreground">{testimonial.name}</div>
-                <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                <div className="font-semibold text-white">{testimonial.name}</div>
+                <div className="text-sm text-white/60 uppercase tracking-wide">{testimonial.role}</div>
               </div>
             </Card>
           ))}
