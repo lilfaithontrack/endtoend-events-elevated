@@ -34,6 +34,10 @@ const Services = () => {
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-accent/5 to-black" />
       
+      {/* Burgundy Spotlights */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse opacity-0 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }} />
+      <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-accent/15 rounded-full blur-3xl animate-pulse opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }} />
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white">
