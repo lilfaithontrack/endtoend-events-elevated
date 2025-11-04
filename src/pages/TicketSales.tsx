@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Ticket, TrendingUp, Star, Zap } from "lucide-react";
@@ -63,6 +64,12 @@ const ticketCategories = [
 ];
 
 const TicketSales = () => {
+  const navigate = useNavigate();
+
+  const handleSelectTicket = (name: string, price: string) => {
+    navigate(`/checkout?ticket=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}`);
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -110,7 +117,11 @@ const TicketSales = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button variant="luxury" className="w-full">
+                    <Button 
+                      variant="luxury" 
+                      className="w-full"
+                      onClick={() => handleSelectTicket(category.name, category.price)}
+                    >
                       Select Tickets
                     </Button>
                   </div>

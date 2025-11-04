@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import News from "./pages/News";
 import Events from "./pages/Events";
 import TicketSales from "./pages/TicketSales";
+import Checkout from "./pages/Checkout";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
           <Route path="/tickets" element={<TicketSales />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/auth" element={<Auth />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
