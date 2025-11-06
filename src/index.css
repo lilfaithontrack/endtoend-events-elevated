@@ -8,23 +8,23 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 4%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 0 0% 4%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 8%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 4%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
 
     --accent: 345 85% 35%;
     --accent-foreground: 0 0% 100%;
@@ -32,23 +32,23 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 12%;
+    --border: 0 0% 88%;
+    --input: 0 0% 95%;
     --ring: 345 85% 40%;
 
     --radius: 0.5rem;
     
-    --luxury-dark: 0 0% 0%;
+    --luxury-light: 0 0% 98%;
     --luxury-burgundy: 345 85% 35%;
     --luxury-burgundy-light: 345 85% 45%;
     --luxury-burgundy-dark: 345 85% 25%;
     
-    --gradient-luxury: linear-gradient(135deg, hsl(var(--luxury-dark)), hsl(var(--luxury-burgundy)));
-    --gradient-stage: linear-gradient(180deg, hsl(var(--luxury-dark)) 0%, hsl(var(--luxury-burgundy-dark)) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(var(--luxury-light)), hsl(var(--luxury-burgundy)));
+    --gradient-stage: linear-gradient(180deg, hsl(var(--luxury-light)) 0%, hsl(var(--luxury-burgundy-light)) 100%);
     
-    --shadow-elegant: 0 10px 40px -10px hsl(var(--luxury-burgundy) / 0.5);
-    --shadow-glow: 0 0 60px hsl(var(--luxury-burgundy) / 0.4);
-    --shadow-intense: 0 0 80px hsl(var(--luxury-burgundy) / 0.6);
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--luxury-burgundy) / 0.3);
+    --shadow-glow: 0 0 60px hsl(var(--luxury-burgundy) / 0.25);
+    --shadow-intense: 0 0 80px hsl(var(--luxury-burgundy) / 0.4);
     
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -70,16 +70,16 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 4%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 345 85% 35%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 345 85% 40%;
   }
 }
 
