@@ -1,17 +1,25 @@
 import { Link, useLocation } from "react-router-dom";
-import { Music, Menu, X } from "lucide-react";
+import { Music, Menu, X, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { LanguageSelector } from "./home/LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "News", path: "/news" },
-    { name: "Coming Events", path: "/events" },
-    { name: "Ticket Sales", path: "/tickets" },
+    { name: t('nav.home'), path: "/", external: false },
+    { name: t('nav.news'), path: "/news", external: false },
+    { name: t('nav.events'), path: "/events", external: false },
+    { name: t('nav.tickets'), path: "/tickets", external: false },
+  ];
+
+  const externalLinks = [
+    { name: "Cheers Fest", url: "https://cheers-fest.com/" },
+    { name: "Banking Expo Ethiopia", url: "https://bankingexpoethiopia.com/" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -29,7 +37,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -43,9 +51,28 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
+            
+            {/* External Links Separator */}
+            <div className="h-6 w-px bg-white/20" />
+            
+            {/* External Company Websites */}
+            {externalLinks.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-white/80 hover:text-accent transition-colors flex items-center gap-1"
+              >
+                {link.name}
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            ))}
+            
+            <LanguageSelector />
             <Link to="/auth">
               <Button variant="luxury" size="sm">
-                Login / Register
+                {t('nav.login')}
               </Button>
             </Link>
           </div>
@@ -77,9 +104,33 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* External Links Section */}
+              <div className="border-t border-white/10 pt-4 mt-2">
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-3 px-2">
+                  Our Events
+                </p>
+                {externalLinks.map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-white/80 hover:text-accent transition-colors flex items-center gap-2 py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                ))}
+              </div>
+              
+              <div className="flex justify-center py-2">
+                <LanguageSelector />
+              </div>
               <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
                 <Button variant="luxury" size="sm" className="w-full">
-                  Login / Register
+                  {t('nav.login')}
                 </Button>
               </Link>
             </div>

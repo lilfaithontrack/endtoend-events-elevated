@@ -1,6 +1,9 @@
 import aboutImage from "@/assets/music-production.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
       {/* Burgundy Spotlights */}
@@ -24,7 +27,7 @@ const About = () => {
           {/* Content */}
           <div className="order-1 lg:order-2 animate-slide-up">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
-              YOUR SOUND, <span style={{ color: '#A62639' }}>OUR STAGE</span>
+              {t('about.title')} <span style={{ color: '#A62639' }}>{t('about.titleHighlight')}</span>
             </h2>
             <div className="space-y-4 text-lg text-white/80">
               <p>
@@ -40,15 +43,15 @@ const About = () => {
             <div className="mt-10 grid grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2" style={{ color: '#A62639' }}>800+</div>
-                <div className="text-sm text-white/70 uppercase tracking-wider">Shows Produced</div>
+                <div className="text-sm text-white/70 uppercase tracking-wider">{t('about.showsProduced')}</div>
               </div>
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2" style={{ color: '#A62639' }}>12+</div>
-                <div className="text-sm text-white/70 uppercase tracking-wider">Years Live</div>
+                <div className="text-sm text-white/70 uppercase tracking-wider">{t('about.yearsLive')}</div>
               </div>
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2" style={{ color: '#A62639' }}>2M+</div>
-                <div className="text-sm text-white/70 uppercase tracking-wider">Fans Reached</div>
+                <div className="text-sm text-white/70 uppercase tracking-wider">{t('about.fansReached')}</div>
               </div>
             </div>
           </div>

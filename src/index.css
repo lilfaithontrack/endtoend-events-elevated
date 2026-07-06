@@ -8,8 +8,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 4%;
+    /* Dark Mode Colors (Default Style) */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 4%;
@@ -37,39 +38,32 @@ All colors MUST be HSL.
     --ring: 345 85% 40%;
 
     --radius: 0.5rem;
-    
+
     --luxury-light: 0 0% 98%;
     --luxury-burgundy: 345 85% 35%;
     --luxury-burgundy-light: 345 85% 45%;
     --luxury-burgundy-dark: 345 85% 25%;
-    
+
     --gradient-luxury: linear-gradient(135deg, hsl(var(--luxury-light)), hsl(var(--luxury-burgundy)));
     --gradient-stage: linear-gradient(180deg, hsl(var(--luxury-light)) 0%, hsl(var(--luxury-burgundy-light)) 100%);
-    
+
     --shadow-elegant: 0 10px 40px -10px hsl(var(--luxury-burgundy) / 0.3);
     --shadow-glow: 0 0 60px hsl(var(--luxury-burgundy) / 0.25);
     --shadow-intense: 0 0 80px hsl(var(--luxury-burgundy) / 0.4);
-    
+
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 345 85% 40%;
   }
 
-  .dark {
+  .light {
     --background: 0 0% 98%;
     --foreground: 0 0% 4%;
     --sidebar-background: 0 0% 100%;
@@ -112,5 +106,19 @@ All colors MUST be HSL.
   
   .elegant-border {
     @apply border border-border/50;
+  }
+  
+  /* Ken Burns Effect for Hero Slideshow */
+  @keyframes ken-burns {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  .animate-ken-burns {
+    animation: ken-burns 20s ease-in-out infinite alternate;
   }
 }
